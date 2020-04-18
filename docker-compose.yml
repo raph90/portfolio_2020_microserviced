@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  gatsby:
+    depends_on:
+      - todoclient
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./gatsby_blog
+    ports:
+      - "80:80"
+  todoclient:
+    build:
+      dockerfile: Dockerfile
+      context: ./portfolio/mern_todos/todo_client
