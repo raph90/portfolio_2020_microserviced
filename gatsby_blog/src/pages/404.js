@@ -12,7 +12,7 @@ const NotFoundPage = ({ data, location }) => {
       <SEO title="404: Not Found" />
       <h1>Not Found</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      <a href="/todos">MAYBE YOU WANT TO DO SOME TODOS???</a>
+      <a href="/todos"> YOU WANT TO DO SOME TODOS???</a>
     </Layout>
   )
 }
