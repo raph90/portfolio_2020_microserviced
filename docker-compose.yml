@@ -3,7 +3,7 @@ services:
   gatsby:
     depends_on:
       - todosnginx
-    restart: always
+    # restart: always
     build:
       dockerfile: Dockerfile
       context: ./gatsby_blog
