@@ -36,6 +36,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.date}
           </p>
+          <p>Added a small p tag just to show I'm working on this</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
