@@ -1,11 +1,11 @@
 import React from "react"
 import Layout from "../components/Layout/layout.component"
-function Blog({ location, data }) {
+function Portfolio({ location, data }) {
   console.log(data)
-  return <h1>I'm the blog</h1>
+  return <h1>I'm the portfolio</h1>
 }
 
-export default Blog
+export default Portfolio
 
 export const pageQuery = graphql`
   query {

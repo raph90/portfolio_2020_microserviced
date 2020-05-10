@@ -2,6 +2,12 @@ import Typography from "typography"
 
 export const colors = {
   mainGrey: "#707070",
+  lightGrey: "#E0E0E0",
+  color1: " #355070ff",
+  color2: "#6d597aff",
+  color3: "#b56576ff",
+  color4: "#e56b6fff",
+  color5: "#eaac8bff",
 }
 
 const raphTypography = {
@@ -13,7 +19,7 @@ const raphTypography = {
       fontSize: "3.2rem",
       color: colors.mainGrey,
       fontWeight: 300,
-      lineHeight: 1.6,
+      lineHeight: 1.4,
     },
   }),
 }

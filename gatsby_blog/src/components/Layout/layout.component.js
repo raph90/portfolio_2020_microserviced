@@ -3,14 +3,14 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../../utils/typography"
 import Sidebar from "./sidebar/sidebar.component"
+import { LayoutContainer, MainContent } from "./layout.styles"
 
 const Layout = props => {
-  console.log("layout props", props)
   return (
-    <div>
+    <LayoutContainer>
       <Sidebar currentPath={props.location.pathname} />
-      <main>{props.children}</main>
-    </div>
+      <MainContent>{props.children}</MainContent>
+    </LayoutContainer>
   )
 }
 

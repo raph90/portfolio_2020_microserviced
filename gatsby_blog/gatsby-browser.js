@@ -1,5 +1,7 @@
-// custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+const React = require("react")
+require("./src/utils/global_styles.css")
+const Layout = require("./src/components/Layout/layout.component").default
 
-import "prismjs/themes/prism.css"
+exports.wrapPageElement = ({ element, props }) => (
+  <Layout {...props}>{element}</Layout>
+)

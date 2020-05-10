@@ -7,15 +7,19 @@ export const SidebarContainer = styled.div`
   width: 36rem;
   box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.1);
   padding: 7rem;
+  display: flex;
+  flex-direction: column;
+  // background-color: #f7f6f4;
 `
 
 export const Icon = styled.svg`
   width: 2.4rem;
   height: auto;
   margin-right: 1rem;
+  cursor: pointer;
 
   & path {
-    fill: blue;
+    fill: ${colors.mainGrey};
   }
 
   &:hover {
@@ -24,3 +28,61 @@ export const Icon = styled.svg`
     }
   }
 `
+
+export const Icons = styled.div`
+  margin-top: 2rem;
+`
+
+export const Links = styled.div`
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`
+
+export const LinkSlidingLine = styled.div`
+  height: 4rem;
+  width: 0.2rem;
+  background-color: ${props => calculateColor(props.path)};
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  transform: ${props => {
+    const y = calculateYPos(props.path)
+    return `translate(-1.8rem, ${y}rem);`
+  }};
+  opacity: ${props => (props.path === "/" ? 0 : 1)};
+
+  transition: transform 0.3s;
+`
+
+export function calculateColor(path) {
+  const { color1, color2, color3, color4, color5 } = colors
+  const mapPathToColor = {
+    "/": color1,
+    "/blog": color5,
+    "/about": color2,
+    "/portfolio": color3,
+    "/contact": color4,
+  }
+
+  return mapPathToColor[path]
+}
+
+function calculateYPos(path) {
+  switch (path) {
+    case "/":
+      return -300
+    case "/about":
+      return 1.1
+    case "/blog":
+      return 7.1
+    case "/portfolio":
+      return 13.1
+    case "/contact":
+      return 19.1
+    default:
+      return 10
+  }
+}
