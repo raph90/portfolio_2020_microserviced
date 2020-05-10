@@ -1,17 +1,24 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
-    },
-  }
+export const colors = {
+  mainGrey: "#707070",
 }
 
-delete Wordpress2016.googleFonts
+const raphTypography = {
+  baseFontSize: "10px",
+  headerFontFamily: ["Open Sans", "sans-serif"],
+  bodyFontFamily: ["Open Sans", "sans-serif"],
+  overrideStyles: () => ({
+    h1: {
+      fontSize: "3.2rem",
+      color: colors.mainGrey,
+      fontWeight: 300,
+      lineHeight: 1.6,
+    },
+  }),
+}
 
-const typography = new Typography(Wordpress2016)
+const typography = new Typography(raphTypography)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
