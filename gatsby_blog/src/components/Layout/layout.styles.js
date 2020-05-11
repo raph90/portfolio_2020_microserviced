@@ -13,7 +13,10 @@ export const MainContent = styled.main`
   height: 100vh;
   width: calc(100vw - 36rem);
   padding: 8rem 14rem;
-  overflow: scroll;
+
+  ${responsive.deskLarge(`
+    padding: 20rem 25%;
+  `)}
   ${responsive.tabLand(`
   padding: 5rem 10rem;
   `)}

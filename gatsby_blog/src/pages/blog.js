@@ -1,8 +1,26 @@
 import React from "react"
+
 import Layout from "../components/Layout/layout.component"
+import { LargePageTitle } from "../components/titles/titles.style"
+import BlogSearch from "../components/pageBased/blog/blog-search/blog-search.component"
+import BlogItem from "../components/pageBased/blog/blog-item/blog-item.component"
 function Blog({ location, data }) {
   console.log(data)
-  return <h1>I'm the blog</h1>
+
+  const handleSearch = () => {
+    console.log("handled")
+  }
+
+  const blogItems = data.allMarkdownRemark.edges.map(post => {
+    return <BlogItem title={post.node.frontmatter.title} />
+  })
+  return (
+    <>
+      <LargePageTitle>blog</LargePageTitle>
+      <BlogSearch handleSearch={handleSearch} />
+      {blogItems}
+    </>
+  )
 }
 
 export default Blog

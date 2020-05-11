@@ -22,9 +22,10 @@ const raphTypography = {
       lineHeight: 1.4,
     },
     p: {
-      fontSize: "1.6rem",
+      fontSize: "1.4rem",
       lineHeight: 1.6,
       textAlign: "justify",
+      color: colors.mainGrey,
     },
   }),
 }

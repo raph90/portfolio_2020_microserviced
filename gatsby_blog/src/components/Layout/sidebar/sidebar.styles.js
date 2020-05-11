@@ -5,9 +5,9 @@ import { responsive } from "../../../utils/responsive"
 
 export const SidebarContainer = styled.div`
   height: 100vh;
-  width: 36rem;
+  width: 24rem;
   box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.1);
-  padding: 7rem;
+  padding: 6rem 0;
   display: flex;
   flex-direction: column;
   // background-color: #f7f6f4;
@@ -16,12 +16,23 @@ export const SidebarContainer = styled.div`
   `)}
 `
 
-// ${responsive.phone(`query`)}
+export const InnerContainer = styled.div`
+  width: 70%;
+  margin: 0 auto;
+`
+
+export const LogoTitle = styled.h1`
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  ${responsive.deskLarge(`
+  font-size: 5.6rem;
+`)}
+`
 
 export const Icon = styled.svg`
-  width: 2.4rem;
+  width: 2.8rem;
   height: auto;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   cursor: pointer;
 
   & path {
@@ -44,6 +55,8 @@ export const Links = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  transform: translateX(1.8rem);
 `
 
 export const LinkSlidingLine = styled.div`

@@ -3,7 +3,9 @@ import {
   SidebarContainer,
   Icons,
   Links,
+  InnerContainer,
   LinkSlidingLine,
+  LogoTitle,
 } from "./sidebar.styles"
 
 import LinkedinLogo from "../../icons/linkedin/linkedin.component"
@@ -15,25 +17,31 @@ function Sidebar({ currentPath }) {
   console.log("sidebar rendered")
   return (
     <SidebarContainer>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h1>Raphael Hetherington</h1>
-      </Link>
+      <InnerContainer>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <LogoTitle>Raphael Hetherington</LogoTitle>
+        </Link>
 
-      <Icons>
-        <GithubLogo />
-        <LinkedinLogo />
-      </Icons>
-      <Links>
-        <LinkSlidingLine path={currentPath} />
-        <LinkToPage currentPath={currentPath} title="about" path="/about" />
-        <LinkToPage currentPath={currentPath} title="blog" path="/blog" />
-        <LinkToPage
-          currentPath={currentPath}
-          title="portfolio"
-          path="/portfolio"
-        />
-        <LinkToPage currentPath={currentPath} title="contact" path="/contact" />
-      </Links>
+        <Icons>
+          <GithubLogo />
+          <LinkedinLogo />
+        </Icons>
+        <Links>
+          <LinkSlidingLine path={currentPath} />
+          <LinkToPage currentPath={currentPath} title="about" path="/about" />
+          <LinkToPage currentPath={currentPath} title="blog" path="/blog" />
+          <LinkToPage
+            currentPath={currentPath}
+            title="portfolio"
+            path="/portfolio"
+          />
+          <LinkToPage
+            currentPath={currentPath}
+            title="contact"
+            path="/contact"
+          />
+        </Links>
+      </InnerContainer>
     </SidebarContainer>
   )
 }
