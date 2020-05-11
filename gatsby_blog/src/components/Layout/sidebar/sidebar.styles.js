@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { colors } from "../../../utils/typography"
+import { responsive } from "../../../utils/responsive"
 
 export const SidebarContainer = styled.div`
   height: 100vh;
@@ -10,7 +11,12 @@ export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   // background-color: #f7f6f4;
+  ${responsive.tabPort(`
+    width: 24rem;
+  `)}
 `
+
+// ${responsive.phone(`query`)}
 
 export const Icon = styled.svg`
   width: 2.4rem;

@@ -21,6 +21,11 @@ const raphTypography = {
       fontWeight: 300,
       lineHeight: 1.4,
     },
+    p: {
+      fontSize: "1.6rem",
+      lineHeight: 1.6,
+      textAlign: "justify",
+    },
   }),
 }
 
