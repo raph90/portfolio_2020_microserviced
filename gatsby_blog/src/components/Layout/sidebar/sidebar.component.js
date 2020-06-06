@@ -5,13 +5,13 @@ import {
   Links,
   InnerContainer,
   LinkSlidingLine,
-  LogoTitle,
 } from "./sidebar.styles"
 
 import LinkedinLogo from "../../icons/linkedin/linkedin.component"
 import GithubLogo from "../../icons/github/github.component"
 import LinkToPage from "./LinkToPage/LinkToPage.component"
 import { Link } from "gatsby"
+import { LogoTitle } from "../../titles/titles.style"
 
 function Sidebar({ currentPath }) {
   console.log("sidebar rendered")

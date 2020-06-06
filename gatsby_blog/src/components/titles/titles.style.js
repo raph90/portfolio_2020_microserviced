@@ -11,3 +11,11 @@ export const LargePageTitle = styled.h1`
   ${responsive.deskLarge(`font-size: 5.6rem;`)}
   text-transform: lowercase;
 `
+export const LogoTitle = styled.h1`
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+//   ${responsive.deskLarge(`
+//   font-size: 5.6rem;
+// `)}
+//   ${responsive.tabLand(`font-size: 3.2rem;`)}
+`

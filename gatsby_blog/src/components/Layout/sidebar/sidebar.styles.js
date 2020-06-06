@@ -4,15 +4,18 @@ import { colors } from "../../../utils/typography"
 import { responsive } from "../../../utils/responsive"
 
 export const SidebarContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 24rem;
   box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.1);
   padding: 6rem 0;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   // background-color: #f7f6f4;
   ${responsive.tabPort(`
-    width: 24rem;
+  display: none;
   `)}
 `
 
@@ -21,16 +24,8 @@ export const InnerContainer = styled.div`
   margin: 0 auto;
 `
 
-export const LogoTitle = styled.h1`
-  font-size: 2.8rem;
-  margin-bottom: 3rem;
-  ${responsive.deskLarge(`
-  font-size: 5.6rem;
-`)}
-`
-
 export const Icon = styled.svg`
-  width: 2.8rem;
+  width: 2.4rem;
   height: auto;
   margin-right: 1.5rem;
   cursor: pointer;
