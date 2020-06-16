@@ -1,74 +1,74 @@
-// Gatsby supports TypeScript natively!
-import React from "react"
-import { PageProps, Link, graphql } from "gatsby"
+import { graphql, Link } from 'gatsby'
+import * as React from 'react'
+import Image from '../components/image'
+import SEO from '../components/seo'
+import Layout from '../layouts'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
-type Data = {
-  site: {
-    siteMetadata: {
+interface PostNode {
+  node: {
+    excerpt: string
+    frontmatter: {
+      date: string
       title: string
     }
-  }
-  allMarkdownRemark: {
-    edges: {
-      node: {
-        excerpt: string
-        frontmatter: {
-          title: string
-          date: string
-          description: string
-        }
-        fields: {
-          slug: string
-        }
-      }
-    }[]
+    fields: {
+      slug: string
+    }
   }
 }
 
-const BlogIndex = ({ data, location }: PageProps<Data>) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+interface IndexPageProps {
+  data: {
+    site: {
+      siteMetadata: {
+        siteName: string
+      }
+    }
+    allMarkdownRemark: {
+      edges: PostNode[]
+    }
+  }
+}
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
+class IndexPage extends React.Component<IndexPageProps, {}> {
+  render() {
+    const { data } = this.props
+    const posts = data.allMarkdownRemark.edges
+
+    return (
+      <>
+        <SEO
+          title="All posts"
+          keywords={['blog', 'gatsby', 'javascript', 'react']}
+        />
+        <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
+          <Image />
+        </div>
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <div key={node.fields.slug}>
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4),
+                  marginBottom: '0.25rem',
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
-    </Layout>
-  )
+              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            </div>
+          )
+        })}
+      </>
+    )
+  }
 }
 
-export default BlogIndex
+export default IndexPage
 
 export const pageQuery = graphql`
   query {
@@ -87,7 +87,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            description
           }
         }
       }
