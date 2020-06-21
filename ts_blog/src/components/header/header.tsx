@@ -7,7 +7,8 @@ interface HeaderProps {
 }
 
 const Header: React.SFC<HeaderProps> = ({ siteTitle }) => (
-  <HeaderContainer >
+  <HeaderContainer animate={{ opacity: 1 }}
+    transition={{ duration: 2, delay: 3 }}>
 
     <Title>raphael hetherington</Title>
 
