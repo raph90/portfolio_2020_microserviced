@@ -1,7 +1,12 @@
 import React from "react"
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group"
 import { TIMEOUT } from "dns";
-
+import { createGlobalStyle } from "styled-components"
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.theme === "purple" ? "purple" : "white")};
+  }
+`
 interface ITransitionState {
 
 }
@@ -13,15 +18,15 @@ const timeout = 500;
 const getTransitionStyles = {
     entering: {
         position: "absolute",
-        opacity: 0
+        transform: "translateY(-100%)"
     },
     entered: {
-        transition: `opacity ${timeout}ms ease-in-out`,
-        opacity: 1
+        transition: `transform ${timeout}ms ease-in-out`,
+        transform: "translateY(0)"
     },
     exiting: {
-        transition: `opacity ${timeout}ms ease-in-out`,
-        opacity: 0
+        transition: `transform ${timeout}ms ease-in-out`,
+        transform: "translateY(-100%)"
     }
 }
 
@@ -29,7 +34,7 @@ class Transition extends React.PureComponent<ITransitionProps, ITransitionState>
 
     render() {
         const { children } = this.props;
-
+        console.log(this.props)
         return (
             <TransitionGroup>
                 <ReactTransition

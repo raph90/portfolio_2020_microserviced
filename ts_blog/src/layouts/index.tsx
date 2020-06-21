@@ -1,7 +1,10 @@
 import { graphql, StaticQuery } from 'gatsby'
 import * as React from 'react'
-import Header from '../components/header'
+import Header from '../components/header/header'
 import Transition from '../components/transition'
+import { ContentDiv } from './layout.style'
+
+import "./layout.css"
 
 
 const Layout: React.SFC = ({ children }) => (
@@ -16,14 +19,14 @@ const Layout: React.SFC = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Transition >
+      <div style={{ width: "100%", }}>
+
+        <ContentDiv>
+          <Header siteTitle={data.site.siteMetadata.title} />
           {children}
-        </Transition>
+        </ContentDiv>
 
-
-      </>
+      </div>
     )}
   />
 )
