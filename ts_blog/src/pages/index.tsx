@@ -9,6 +9,7 @@ import {
   SectionsDiv,
   Section,
   SectionTitle,
+  ControlArea,
 } from './page-specific-styles/index/index.styles'
 import { theme } from '../utils/theme'
 import BlogPostClicker from '../components/blog-post-clicker/blog-post-clicker.component'
@@ -61,6 +62,7 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
           title="All posts"
           keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
+        <ControlArea />
       </>
     )
   }

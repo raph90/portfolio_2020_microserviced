@@ -21,6 +21,7 @@ const typography = new Typography({
       color: 'white',
       backgroundColor: '#465F6A',
       paddingTop: '4rem',
+      paddingBottom: '4rem',
     },
     h3: {
       fontSize: '1.8rem',
