@@ -1,19 +1,25 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
-import { HeaderContainer, Title } from './header.style'
+import { HeaderContainer, Title, Titles } from './header.style'
 import GitHubButton from 'react-github-btn'
+
 interface HeaderProps {
   siteTitle?: string
 }
 
 const Header: React.SFC<HeaderProps> = ({ siteTitle }) => (
-  <HeaderContainer animate={{ opacity: 1 }}
-    transition={{ duration: 2, delay: 3 }}>
+  <HeaderContainer>
+    <Titles>
+      <Title>Raphael Hetherington</Title>
+      <Title subtitle>Software Engineering</Title>
+    </Titles>
 
-    <Title>raphael hetherington</Title>
-
-    <GitHubButton href="https://github.com/raph90" aria-label="Follow @raph90 on GitHub">Follow @raph90</GitHubButton>
-
+    <GitHubButton
+      href="https://github.com/raph90"
+      aria-label="Follow @raph90 on GitHub"
+    >
+      Follow @raph90
+    </GitHubButton>
   </HeaderContainer>
 )
 
