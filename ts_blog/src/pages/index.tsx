@@ -1,27 +1,19 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
-import Image from '../components/image'
 import SEO from '../components/seo'
-import Layout from '../layouts'
-import {
-  IntroSection,
-  Subtitle,
-  SectionsDiv,
-  Section,
-  SectionTitle,
-  ControlArea,
-} from './page-specific-styles/index/index.styles'
-import { theme } from '../utils/theme'
-import BlogPostClicker from '../components/blog-post-clicker/blog-post-clicker.component'
-import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import Section from './page-specific-components/index/section/section.component'
+import TreeToggle, {
+  ITreeStructure,
+} from '../components/tree-toggle/tree-toggle.component'
+import TransitionLink from 'gatsby-plugin-transition-link'
 
-interface PostNode {
+export interface PostNode {
   node: {
     excerpt: string
     frontmatter: {
       date: string
       title: string
+      slug: string
     }
     fields: {
       slug: string
@@ -42,19 +34,31 @@ interface IndexPageProps {
   }
 }
 
-class IndexPage extends React.Component<IndexPageProps, {}> {
+const testData: ITreeStructure = {
+  sections: [
+    {
+      title: 'Hello you',
+      sections: [
+        {
+          title: 'Hello Caoimhe',
+          textPoints: [],
+          sections: [],
+          id: 'caoimhe',
+        },
+      ],
+      textPoints: [],
+      id: 'secondLevel',
+    },
+  ],
+  title: 'Example 1',
+  textPoints: ["I'm a text point"],
+  id: 'topLEvel',
+}
+
+class IndexPage extends React.Component<IndexPageProps> {
   render() {
     const { data } = this.props
-
     const posts = data.allMarkdownRemark.edges
-    const variants = {
-      open: {
-        transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-      },
-      closed: {
-        transition: { staggerChildren: 0.05, staggerDirection: -1 },
-      },
-    }
 
     return (
       <>
@@ -62,7 +66,6 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
           title="All posts"
           keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
-        <ControlArea />
       </>
     )
   }
@@ -81,12 +84,11 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
-          fields {
-            slug
-          }
+
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            slug
           }
         }
       }

@@ -5,3 +5,8 @@
  */
 
 // You can delete this file if you're not using it
+//
+//
+import CustomThemeProvider from './src/layouts/themeProvider/themeProvider.component'
+
+export const wrapRootElement = CustomThemeProvider

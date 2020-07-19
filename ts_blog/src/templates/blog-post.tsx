@@ -3,7 +3,6 @@ import * as React from 'react'
 import SEO from '../components/seo'
 import Layout from '../layouts'
 
-
 interface BlogPostTemplateProps {
   data: {
     site: {
@@ -62,14 +61,14 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps, {}> {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={previous.frontmatter.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={next.frontmatter.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -90,11 +89,12 @@ export const pageQuery = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html
       frontmatter {
+        slug
         title
         date(formatString: "MMMM DD, YYYY")
       }

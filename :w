@@ -21,16 +21,11 @@ const Header: React.SFC<HeaderProps> = ({ siteTitle }) => (
         <Title>Raphael Hetherington </Title>
       </TransitionLink>
     </Titles>
+
     <HeaderLinks>
-      <HeaderLink to="#">
-        <h3>projects</h3>
-      </HeaderLink>
-      <HeaderLink to="#">
-        <h3>blog</h3>
-      </HeaderLink>
-      <HeaderLink to="#">
-        <h3>about</h3>
-      </HeaderLink>
+      <HeaderLink href="#">Github</HeaderLink>
+      <HeaderLink href="#">Email</HeaderLink>
+      <HeaderLink href="#">Linkedin</HeaderLink>
     </HeaderLinks>
   </HeaderContainer>
 )

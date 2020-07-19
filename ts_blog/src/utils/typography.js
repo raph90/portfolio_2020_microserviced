@@ -4,41 +4,50 @@ import { theme } from './theme'
 const typography = new Typography({
   baseFontSize: '10px',
   baseLineHeight: 1.666,
-  headerFontFamily: ['Montserrat'],
-  bodyFontFamily: ['Raleway', 'sans-serif'],
+  headerFontFamily: ['DM Serif Display', 'serif'],
+  bodyFontFamily: ['Poppins', 'sans-serif'],
   googleFonts: [
     {
-      name: 'Montserrat',
-      styles: ['100', '300', '600', '700'],
+      name: 'DM Serif Display',
+      styles: ['400'],
     },
     {
-      name: 'Raleway',
-      styles: ['500'],
+      name: 'Poppins',
+      styles: ['400'],
     },
   ],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
     body: {
-      color: 'white',
-      backgroundColor: '#465F6A',
-      paddingTop: '4rem',
-      paddingBottom: '4rem',
+      color: '#525252',
+    },
+    h1: {
+      fontSize: '3.2rem',
+      color: '#525252',
+    },
+    p: {
+      fontFamily: 'Poppins',
+      fontSize: '1.6rem',
+      lineHeight: '2.5rem',
     },
     h3: {
       fontSize: '1.8rem',
       marginBottom: '.8rem',
+      color: '#525252',
     },
     h2: {
       fontSize: '2.4rem',
     },
-    h1: {
-      fontSize: '2.8rem',
-      color: 'white',
-      marginBottom: '1rem',
+    h5: {
+      fontSize: '1.2rem',
+      color: '#525252',
+    },
+    a: {
+      fontSize: '1.6rem',
+      color: 'inherit',
     },
     h4: {
       fontSize: '1.6rem',
       marginBottom: 0,
-      fontWeight: 600,
     },
     ul: {
       margin: 0,

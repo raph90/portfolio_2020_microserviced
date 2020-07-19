@@ -16,18 +16,16 @@ exports.createPages = ({ graphql, actions }) => {
             ) {
               edges {
                 node {
-                  fields {
-                    slug
-                  }
                   frontmatter {
                     title
+                    slug
                   }
                 }
               }
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)
@@ -42,10 +40,10 @@ exports.createPages = ({ graphql, actions }) => {
           const next = index === 0 ? null : posts[index - 1].node
 
           createPage({
-            path: post.node.fields.slug,
+            path: post.node.frontmatter.slug,
             component: blogPost,
             context: {
-              slug: post.node.fields.slug,
+              slug: post.node.frontmatter.slug,
               previous,
               next,
             },

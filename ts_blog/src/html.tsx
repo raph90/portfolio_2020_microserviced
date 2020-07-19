@@ -1,8 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { GoogleFont } from "react-typography"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { GoogleFont } from 'react-typography'
 
-import typography from "./utils/typography"
+import typography from './utils/typography'
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
