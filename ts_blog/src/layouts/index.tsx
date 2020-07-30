@@ -40,18 +40,21 @@ const Layout: React.SFC = ({ children }) => (
         }
       }
     `}
-    render={(data) => (
-      <div style={{ width: '100%', height: '100vh' }}>
-        <myThemeContext.Consumer>
-          {(context) => (
-            <>
-              <Sidebar context={context} />
-              <MainContent context={context}>{children}</MainContent>
-            </>
-          )}
-        </myThemeContext.Consumer>
-      </div>
-    )}
+    render={(data) => {
+      console.log('data', data)
+      return (
+        <div style={{ width: '100%', height: '100vh' }}>
+          <myThemeContext.Consumer>
+            {(context) => (
+              <>
+                <Sidebar context={context} />
+                <MainContent context={context}>{children}</MainContent>
+              </>
+            )}
+          </myThemeContext.Consumer>
+        </div>
+      )
+    }}
   />
 )
 

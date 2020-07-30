@@ -40,6 +40,7 @@ const typography = new Typography({
     h5: {
       fontSize: '1.2rem',
       color: '#525252',
+      marginBottom: 0,
     },
     a: {
       fontSize: '1.6rem',

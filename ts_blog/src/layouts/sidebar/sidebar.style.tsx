@@ -12,25 +12,18 @@ export const SidebarOuterContainer = styled.div`
 `
 
 export const SidebarInnerContainer = styled.div`
-  height: 90%;
-  width: 70%;
-  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 4rem;
+  justify-content: space-between;
 `
 
-export const SidebarNameTitle = styled.h3`
-  position: absolute;
-  top: 0;
-  left: 0;
-`
+export const SidebarNameTitle = styled.h3``
 
-export const SidebarFooter = styled.h5`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-`
+export const SidebarFooter = styled.h5``
 
 export const HiMessage = styled.div`
-  position: absolute;
-  left: 0;
-  top: 15rem;
+  height: 40rem;
 `

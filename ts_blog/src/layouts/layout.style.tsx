@@ -9,5 +9,6 @@ export const MainContentContainer = styled.div`
   width: calc(100% - 36rem);
   margin-left: 36rem;
   background: ${(props: { color: string }) => props.color};
+  padding: 3rem 4rem 0 3rem;
   height: 100%;
 `

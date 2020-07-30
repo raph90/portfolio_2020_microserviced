@@ -62,10 +62,7 @@ class IndexPage extends React.Component<IndexPageProps> {
 
     return (
       <>
-        <SEO
-          title="All posts"
-          keywords={['blog', 'gatsby', 'javascript', 'react']}
-        />
+        <SEO title="Home" />
       </>
     )
   }

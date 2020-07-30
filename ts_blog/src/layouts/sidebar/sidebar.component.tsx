@@ -20,11 +20,11 @@ const Sidebar: FC<ISidebarProps> = (props) => {
         <SidebarNameTitle>Raphael Hetherington</SidebarNameTitle>
         <HiMessage>
           <h1>{"Hi, I'm Raph."}</h1>
-          <p style={{ marginTop: '6rem' }}>
+          <p style={{ marginTop: '4rem' }}>
             I'm a web developer and aspiring software engineer, living and
             working in Dublin, Ireland.
           </p>
-          <p style={{ marginTop: '4rem' }}> To get in touch,</p>
+          <p style={{ marginTop: '2rem' }}> To get in touch,</p>
           <p style={{ marginTop: '-1.7rem' }}>
             {' '}
             please write to me at{' '}
